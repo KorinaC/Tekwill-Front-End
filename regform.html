@@ -1,87 +1,150 @@
 <!doctype html>
 <html>
 <head>
-    <title> Registration Form</title> 
+    <title> Registration Form</title>
+    <style>
+         #basicuserinfo {
+          background-color: white;
+          border: 3px solid rgb(0, 183, 255);
+          border-radius: 5px;
+          border-bottom: 1px solid rgb(0, 183, 255);
+          padding: 5px;
+          width: 50%;
+        }
+        #addressinfo {
+          background-color: white;
+          border: 3px solid rgb(0, 183, 255);
+          border-radius: 5px;
+          border-top: 1px solid rgb(0, 183, 255);
+          border-bottom-style: none;
+          padding: 5px;
+          width: 50%;
+        }
+        #preferences {
+          background-color: white;
+          border: 3px solid rgb(0, 183, 255);
+          border-radius: 3px;
+          border-top: 1px solid rgb(0, 183, 255);
+          border-right: 1px solid rgb(0, 183, 255);;
+          border-bottom-style: none;
+          padding: 5px;
+          width: 50%;
+        }
+        #additional {
+          background-color: white;
+          border: 3px solid rgb(0, 183, 255);
+          border-radius: 5px;
+          border-top: 2px solid rgb(0, 183, 255);
+          border-bottom-style: 2px solid rgb(0, 183, 255);
+          padding: 5px;
+          width: 50%;
+        }
+        #profile {
+          background-color: white;
+          border: 3px solid rgb(0, 183, 255);
+          border-radius: 2px;
+          border-top: 2px solid rgb(0, 183, 255);
+          border-bottom-style: 2px solid rgb(0, 183, 255);
+          padding: 5px;
+          width: 50%;
+        }
+        legend {
+          color: rgb(0, 183, 255);
+          font-weight: 40px;
+          font-size: 25px;
+          font-style: italic;
+        }
+        input {
+          margin: 5px;
+          margin-left: 2px;
+          margin-right: 2px;
+        }
+        label {
+          color: black;
+          font-weight: bold;
+        }
+        </style>
 </head>
 <body>
     <form action="/action_page.php">
-        <fieldset>
-          <legend>Basic user information:</legend>
-        <label for="fname">Full name:</label>
-        <input type="text" id="fname" name="fname" required><br>
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
-        <br>
-        <label for="pwd">Password:</label>
-        <input type="password" id="pwd" name="pwd" required>
-        <label for="confirmpwd">Confirm password:</label>
-        <input type="password" id="confirmpwd" name="confirmpwd"><br>
-        <label for="gender">Gender:</label>
-        <input type="radio" id="male" name="gender" value="male">
-        <label for="male">Male</label>
-        <input type="radio" id="female" name="gender" value="female">
-        <label for="female">Female</label>
-        <input type="radio" id="other" name="gender" value="other">
-        <label for="other">Other</label><br>
-        <label for="birthday">Date of Birth:</label>
-        <input type="date" id="birthday" name="birthday"><br>
+        <fieldset id="basicuserinfo">
+            <legend>Basic user information:</legend>
+            <label for="fname">Full name:</label><br>
+            <input type="text" id="fname" name="fname" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+            <br><br>
+            <label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd" required><br><br>
+            <label for="confirmpwd">Confirm password:</label><br>
+            <input type="password" id="confirmpwd" name="confirmpwd">
+            <br>
+            <p><strong>Gender:</strong></p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br><br>
+            <label for="birthday">Date of Birth:</label><br>
+            <input type="date" id="birthday" name="birthday"><br>
         </fieldset>
-         <fieldset>
-            <legend>Address Information</legend>
-          <label for="fname">Street Address:</label>
-          <textarea name="staddress"></textarea><br>
-          <label for="country">Country:</label>
-             <select id="country" name="country">
+        <fieldset id="addressinfo">
+            <legend>Address Information:</legend><br>
+            <label for="fname">Street Address:</label><br>
+            <textarea name="staddress"></textarea><br><br>
+            <label for="country">Country:</label><br>
+            <select id="country" name="country"><br>
                 <option value="france">France</option>
                 <option value="luxemb">Luxembourg</option>
                 <option value="italy">Italy</option>
                 <option value="switz">Switzerland</option>
                 <option value="germany">Germany</option>
-             </select><br>
-          <label for="city">City:</label>
-          <input type="text" id="city" name="city"><br>
-          <label for="postalcode">Postal code:</label>
-          <input type="number" id="poste" name="poste">
-         </fieldset>
-         <fieldset>
-            <legend>Preferences:</legend>
-            <label for="contactmethod">Preffered contact method:</label>
-            <input type="checkbox" id="emailaddress" name="emailaddress" >
+            </select><br><br>
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city"><br><br>
+            <label for="postalcode">Postal code:</label><br>
+            <input type="number" id="postalcode" name="poste"><br>
+        </fieldset>
+        <fieldset id="preferences">
+            <legend>Preferences:</legend><br>
+            <p><strong>Preffered contact method:</strong></p>
+            <input type="checkbox" id="email" name="emailaddress">
             <label for="email">Email</label>
-            <input type="checkbox" id="phone" name="phone" >
+            <input type="checkbox" id="phone" name="phone">
             <label for="phone">Phone</label>
             <input type="checkbox" id="postalmail" name="postalmail">
-            <label for="postalmail">Postal Mail</label><br>
-            <label for="favoritecolor">Favorite color</label>
-            <input type="color" id="color" value="#0000ff" >
-         </fieldset>
-         <fieldset>
-            <legend>Additional details:</legend>
-            <label for="howdidyouhear">How did you hear about us?</label>
-             <select id="source" name="source">
+            <label for="postalmail">Postal Mail</label>
+            <br><br>
+            <label for="color">Favorite color:</label>
+            <input type="color" id="color" value="#0000ff">
+        </fieldset>
+        <fieldset id="additional">
+            <legend>Additional details:</legend><br>
+            <label for="source">How did you hear about us?</label><br><br>
+            <select id="source" name="source"><br><br>
                 <option value="friend">Friend</option>
                 <option value="internet">Internet</option>
                 <option value="advert">Advertisement</option>
                 <option value="another">Another</option>
-             </select><br>
-            <label for="feedback">Feedback/Comments:</label>
+            </select><br><br>
+            <label for="feedback">Feedback/Comments:</label><br>
             <textarea name="feedback"></textarea><br>
-         </fieldset>
-         <fieldset>
-            <legend>Profile:</legend>
+        </fieldset>
+        <fieldset id="profile">
+            <legend>Profile:</legend><br>
             <label for="photo">Upload a Profile Picture:</label>
-                <input type="file" id="image" name="imagename" accept="image/x-png,image/jpg"><br>
-                <label for="url">Website URL:</label>
-                <input type="url" name="url" id="url"  pattern="https://.*" size="30" required /><br>
-                <label for="experience">Experience level with HTML:</label>
-                0
-                <input type="range" id="experience" name="exp" min="1" max="10">
-                10
-         </fieldset>
-         <input type="submit">
-         <input type="reset">
+            <input type="file" id="photo" name="imagename" accept=".jpg, .png">
+            <br><br>
+            <label for="url">Website URL:</label><br>
+            <input type="url" name="url" id="url" pattern="https://.*" size="30" required />
+            <br><br>
+            <label for="experience">Experience level with HTML:</label>
+            <input type="range" id="experience" name="experience" min="1" max="10"
+                oninput="displayValue.value=experience.value">
+            <output id="displayValue">5</output> /10
+        </fieldset>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
     </form>
 </body>
-
-
-    
