@@ -22,30 +22,24 @@
           margin-left: 2px;
           margin-right: 2px;
         }
-        label {
+        label:not(.unbold), p {
           color: black;
           font-weight: bold;
+          padding-left: 30px;
         }
-        input[type="text"], input[type="email"], input[type="password"], input[type="date"], input[type="url"], input[type="number"]
-        {
-            width: 90%;
-            margin: 10px;
-            border-radius: 7px;
-            height: 30px;
-        }
+        input[type="text"], input[type="email"], 
+        input[type="password"], input[type="date"], 
+        input[type="url"], input[type="number"],
+        textarea,
         select
         {
-            width: 90%;
-            margin: 10px;
-            border-radius: 7px;
-            height: 30px;
-        }
-        textarea
-        {
-            width: 90%;
-            margin: 10px;
-            border-radius: 7px;
-            height: 30px;
+            width: 100%;
+            padding:12px 20px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid;
+            border-radius: 4px;
+            box-sizing: border-box;
         }
         </style>
 </head>
@@ -63,13 +57,13 @@
             <label for="confirmpwd">Confirm password:</label><br>
             <input type="password" id="confirmpwd" name="confirmpwd">
             <br>
-            <p><strong>Gender:</strong></p>
+            <p>Gender:</p>
             <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Male</label>
+            <label for="male" class="unbold">Male</label>
             <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Female</label>
+            <label for="female" class="unbold">Female</label>
             <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label><br><br>
+            <label for="other"class="unbold">Other</label><br><br>
             <label for="birthday">Date of Birth:</label><br>
             <input type="date" id="birthday" name="birthday"><br>
         </fieldset>
@@ -92,20 +86,20 @@
         </fieldset>
         <fieldset id="preferences">
             <legend>Preferences:</legend>
-            <p><strong>Preffered contact method:</strong></p>
+            <p>Preffered contact method:</p>
             <input type="checkbox" id="email" name="emailaddress">
-            <label for="email">Email</label>
+            <label for="email"class="unbold">Email</label>
             <input type="checkbox" id="phone" name="phone">
-            <label for="phone">Phone</label>
+            <label for="phone"class="unbold">Phone</label>
             <input type="checkbox" id="postalmail" name="postalmail">
-            <label for="postalmail">Postal Mail</label>
+            <label for="postalmail"class="unbold">Postal Mail</label>
             <br><br>
             <label for="color">Favorite color:</label>
             <input type="color" id="color" value="#0000ff">
         </fieldset>
         <fieldset id="additional">
             <legend>Additional details:</legend>
-            <label for="source">How did you hear about us?</label><br><br>
+            <label for="source">How did you hear about us?</label><br>
             <select id="source" name="source"><br><br>
                 <option value="friend">Friend</option>
                 <option value="internet">Internet</option>
