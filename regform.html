@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+    <title> Registration Form</title>
+    <style>
+        fieldset {
+          background-color: white;
+          border: 3px solid rgb(0, 183, 255);
+          border-radius: 3px;
+          border-left-width: 2px ;
+          padding: 5px;
+          width: 50%;
+        }
+        legend {
+          color: rgb(0, 183, 255);
+          font-weight: 40px;
+          font-size: 25px;
+          font-style: italic;
+        }
+        input {
+          margin: 10px;
+          margin-left: 2px;
+          margin-right: 2px;
+        }
+        label:not(.unbold), p {
+          color: black;
+          font-weight: bold;
+          padding-left: 30px;
+        }
+        input[type="text"], input[type="email"], 
+        input[type="password"], input[type="date"], 
+        input[type="url"], input[type="number"],
+        textarea,
+        select
+        {
+            width: 100%;
+            padding:12px 20px;
+            margin: 5px 0;
+            display: inline-block;
+            border: 1px solid;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        </style>
+</head>
+<body>
+    <form action="/action_page.php">
+        <fieldset id="basicuserinfo">
+            <legend>Basic user information:</legend>
+            <label for="fname" >Full name:</label><br>
+            <input type="text" id="fname" name="fname" required size="50" ><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+            <br><br>
+            <label for="pwd">Password:</label><br>
+            <input type="password" id="pwd" name="pwd" required><br><br>
+            <label for="confirmpwd">Confirm password:</label><br>
+            <input type="password" id="confirmpwd" name="confirmpwd">
+            <br>
+            <p>Gender:</p>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male" class="unbold">Male</label>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female" class="unbold">Female</label>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other"class="unbold">Other</label><br><br>
+            <label for="birthday">Date of Birth:</label><br>
+            <input type="date" id="birthday" name="birthday"><br>
+        </fieldset>
+        <fieldset id="addressinfo">
+            <legend>Address Information:</legend><br>
+            <label for="fname">Street Address:</label><br>
+            <textarea name="staddress"></textarea><br><br>
+            <label for="country">Country:</label><br>
+            <select id="country" name="country"><br>
+                <option value="france">France</option>
+                <option value="luxemb">Luxembourg</option>
+                <option value="italy">Italy</option>
+                <option value="switz">Switzerland</option>
+                <option value="germany">Germany</option>
+            </select><br><br>
+            <label for="city">City:</label><br>
+            <input type="text" id="city" name="city"><br><br>
+            <label for="postalcode">Postal code:</label><br>
+            <input type="number" id="postalcode" name="poste"><br>
+        </fieldset>
+        <fieldset id="preferences">
+            <legend>Preferences:</legend>
+            <p>Preffered contact method:</p>
+            <input type="checkbox" id="email" name="emailaddress">
+            <label for="email"class="unbold">Email</label>
+            <input type="checkbox" id="phone" name="phone">
+            <label for="phone"class="unbold">Phone</label>
+            <input type="checkbox" id="postalmail" name="postalmail">
+            <label for="postalmail"class="unbold">Postal Mail</label>
+            <br><br>
+            <label for="color">Favorite color:</label>
+            <input type="color" id="color" value="#0000ff">
+        </fieldset>
+        <fieldset id="additional">
+            <legend>Additional details:</legend>
+            <label for="source">How did you hear about us?</label><br>
+            <select id="source" name="source"><br><br>
+                <option value="friend">Friend</option>
+                <option value="internet">Internet</option>
+                <option value="advert">Advertisement</option>
+                <option value="another">Another</option>
+            </select><br><br>
+            <label for="feedback">Feedback/Comments:</label><br>
+            <textarea name="feedback"></textarea><br>
+        </fieldset>
+        <fieldset id="profile">
+            <legend>Profile:</legend>
+            <label for="photo">Upload a Profile Picture:</label>
+            <input type="file" id="photo" name="imagename" accept=".jpg, .png">
+            <br><br>
+            <label for="url">Website URL:</label><br>
+            <input type="url" name="url" id="url" pattern="https://.*" size="30" required />
+            <br><br>
+            <label for="experience">Experience level with HTML:</label>
+            <input type="range" id="experience" name="experience" min="1" max="10"
+                oninput="displayValue.value=experience.value">
+            <output id="displayValue">5</output> /10
+        </fieldset>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+</body>
